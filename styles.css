@@ -1,0 +1,184 @@
+.home {
+  background-color: #121213;
+  width: 100vw;
+  height: 100vh;
+}
+.header {
+  height: 70px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(255, 255, 255, 0.3);
+  padding: 0 30px;
+}
+.wordle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.icon {
+  height: 30px;
+  fill: #fff;
+}
+h1,
+h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 600;
+}
+.game-area {
+  height: auto;
+  width: 330px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+}
+.wordle-box {
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  position: relative;
+  height: 60px;
+  width: 60px;
+  margin: 3px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.wordle-box span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+}
+.keyboard {
+  position: absolute;
+  width: 525px;
+  left: 50%;
+  bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+.keyboard button {
+  background-color: rgb(128, 128, 128);
+  margin: 1px;
+  padding: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.warning-div {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #121213;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  backface-visibility: hidden;
+  opacity: 0;
+}
+.green {
+  background-color: #538d4e;
+  border: 0;
+  transition: ease-in .2s;
+}
+div.keyboard button.green-letter{
+  background-color: #538d4e;
+  transition: ease-in .5s;
+}
+.yellow {
+  background-color: #b59f3b;
+  border: 0;
+  transition: ease-in .2s;
+}
+.keyboard button.yellow-letter{
+  background-color: #b59f3b;
+  transition: ease-in .5s;
+}
+.keyboard button.gray{
+  background-color: rgb(59, 59, 59);
+  transition: ease-out .5s;
+}
+
+.appear {
+  animation: appearDisappear 2s ease-in-out;
+}
+.addLetter {
+  animation: addLetter 0.1s ease-in-out;
+  border: 2px solid rgb(255, 255, 255, 0.3);
+}
+.makeGuess {
+  animation: makeGuess .5s ease-out;
+}
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes addLetter {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes makeGuess {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(-6px);
+  }
+  20% {
+    transform: translateX(+5px);
+  }
+  40% {
+    transform: translateX(-4px);
+  }
+  60% {
+    transform: translateX(+3px);
+  }
+  80% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes appearDisappear {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
