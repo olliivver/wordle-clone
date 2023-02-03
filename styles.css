@@ -68,6 +68,17 @@ h2 {
   justify-content: center;
   transform: translateX(-50%);
 }
+@media (max-height: 800px){
+  .keyboard{
+    bottom: 10px;
+  }
+}
+@media (max-height: 750px){
+  .keyboard{
+    left: 50px;
+    transform: translateX(0);
+  }
+}
 .keyboard button {
   background-color: rgb(128, 128, 128);
   margin: 1px;
